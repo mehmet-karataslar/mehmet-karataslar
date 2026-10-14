@@ -1,0 +1,109 @@
+name: Update commit history
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '17 */6 * * *'
+  push:
+    paths:
+      - '.github/workflows/commit-history.yml'
+permissions:
+  contents: write
+concurrency:
+  group: profile-commit-history
+  cancel-in-progress: false
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Read actual GitHub commits
+        env:
+          PROFILE_LOGIN: mehmet-karataslar
+          GH_API_TOKEN: ${{ secrets.PROFILE_GITHUB_TOKEN || github.token }}
+          HAS_PROFILE_TOKEN: ${{ secrets.PROFILE_GITHUB_TOKEN != '' }}
+        run: |
+          python3 - <<'PYTHON'
+          import os, json, urllib.request, urllib.parse, html
+          from pathlib import Path
+          from datetime import datetime, timedelta
+          from zoneinfo import ZoneInfo
+          
+          login = os.environ['PROFILE_LOGIN']
+          token = os.environ['GH_API_TOKEN']
+          now = datetime.now(ZoneInfo('Europe/Istanbul'))
+          
+          def search(query, per_page=1):
+              url = 'https://api.github.com/search/commits?' + urllib.parse.urlencode({'q': query, 'sort': 'committer-date', 'order': 'desc', 'per_page': per_page})
+              req = urllib.request.Request(url, headers={'Authorization': 'Bearer ' + token, 'Accept': 'application/vnd.github+json', 'X-GitHub-Api-Version': '2022-11-28', 'User-Agent': 'profile-commit-history'})
+              with urllib.request.urlopen(req, timeout=45) as response:
+                  data = json.load(response)
+              if data.get('incomplete_results'):
+                  raise RuntimeError('GitHub commit search returned incomplete results')
+              return data
+          
+          all_commits = search('author:' + login, 30)
+          total = all_commits['total_count']
+          recent = [c for c in all_commits['items'] if not c['repository'].get('private', False)][:6]
+          months = []
+          month_index = now.year * 12 + now.month - 1
+          for delta in range(11, -1, -1):
+              index = month_index - delta
+              year, zero_month = divmod(index, 12)
+              start = datetime(year, zero_month + 1, 1)
+              next_index = index + 1
+              next_year, next_zero_month = divmod(next_index, 12)
+              end = datetime(next_year, next_zero_month + 1, 1) - timedelta(days=1)
+              count = search(f'author:{login} committer-date:{start:%Y-%m-%d}..{end:%Y-%m-%d}')['total_count']
+              months.append((start.strftime('%m/%y'), count))
+          
+          scope = 'Yetkilendirilmiş commit kayıtları' if os.environ.get('HAS_PROFILE_TOKEN') == 'true' else 'Herkese açık commit kayıtları'
+          def esc(s):
+              return html.escape(str(s), quote=True)
+          
+          def render(dark=False):
+              bg, ink, muted, card, border = ('#0d1117', '#f0e8df', '#a99786', '#161b22', '#30363d') if dark else ('#fffaf4', '#503c2d', '#99826b', '#ffffff', '#eadac8')
+              out = [f'<svg xmlns="http://www.w3.org/2000/svg" width="960" height="570" viewBox="0 0 960 570"><title>{esc(login)} — GitHub commit geçmişi</title><rect width="960" height="570" rx="18" fill="{bg}"/><g font-family="Arial,Helvetica,sans-serif">']
+              def text(x,y,s,size=12,color=None,weight='normal'):
+                  out.append(f'<text x="{x}" y="{y}" fill="{color or ink}" font-size="{size}" font-weight="{weight}">{esc(s)}</text>')
+              text(28,35,'GITHUB COMMIT GEÇMİŞİ',14,muted,'bold')
+              text(28,83,f'{total:,}'.replace(',', '.'),38,ink,'bold')
+              text(210,63,'Toplam commit',19,ink,'bold')
+              text(210,85,scope,12,muted)
+              text(28,116,'Son 12 ay — aylık commit sayısı',13,ink,'bold')
+              maximum = max(1, max(n for _,n in months))
+              for i,(label,count) in enumerate(months):
+                  x = 42+i*74
+                  height = round(count/maximum*95)
+                  out.append(f'<rect x="{x}" y="{239-height}" width="40" height="{max(2,height)}" rx="4" fill="#e98a5f"><title>{label}: {count} commit</title></rect>')
+                  text(x,257,label,10,muted)
+                  text(x,230-height,str(count),10,muted)
+              text(28,293,'Son herkese açık commitler',14,ink,'bold')
+              for i,c in enumerate(recent):
+                  y = 312+i*33
+                  out.append(f'<rect x="24" y="{y-15}" width="912" height="30" rx="6" fill="{card}" stroke="{border}"/>')
+                  date = c['commit']['committer']['date'][:10]
+                  repo = c['repository']['name']
+                  message = c['commit']['message'].splitlines()[0]
+                  text(34,y+4,date,10,muted)
+                  text(114,y+4,repo[:20],11,ink,'bold')
+                  text(270,y+4,message[:80] + ('…' if len(message)>80 else ''),11,ink)
+              text(28,535,'GitHub commit aramasındaki erişilebilir kayıtlar · 6 saatte bir otomatik güncelleme',11,muted)
+              text(28,554,'Son güncelleme: ' + now.strftime('%d.%m.%Y %H:%M') + ' (Türkiye)',11,muted)
+              out.append('</g></svg>')
+              return ''.join(out)
+          
+          Path('assets').mkdir(exist_ok=True)
+          Path('assets/commit-history.svg').write_text(render(), encoding='utf-8')
+          Path('assets/commit-history-dark.svg').write_text(render(True), encoding='utf-8')
+          print('Commit history updated:', total, 'commits')
+          PYTHON
+      - name: Save updated history
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add assets/commit-history.svg assets/commit-history-dark.svg
+          if ! git diff --cached --quiet; then
+            git commit -m 'Update GitHub commit history'
+            git pull --rebase
+            git push
+          fi
