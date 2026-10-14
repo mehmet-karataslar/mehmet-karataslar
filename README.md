@@ -4,7 +4,7 @@
 
 ### Bilgisayar Mühendisi · Yazılım Geliştirici
 
-<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=23&duration=2800&pause=1000&color=2563EB&center=true&vCenter=true&width=700&height=55&lines=Web+%C2%B7+Mobile+%C2%B7+Artificial+Intelligence;Flutter+%C2%B7+React+%C2%B7+Next.js+%C2%B7+Python;Fikirden+%C3%A7al%C4%B1%C5%9Fan+%C3%BCr%C3%BCne" alt="Web, mobil ve yapay zekâ çalışmalarımı tanıtan animasyon" width="100%">
+<a href="https://www.benmuhendisiniz.com/projects"><img src="assets/software-studio.svg" alt="Mehmet Karataş’ın animasyonlu yazılım atölyesi: kod ekranı, mobil uygulama, yapay zekâ ağı ve küçük robot" width="100%"></a>
 
 **Web, mobil ve yapay zekâ ile fikirleri çalışan ürünlere dönüştürüyorum.**
 
@@ -132,3 +132,4 @@ Web sitesi, mobil uygulama, özel yazılım veya yapay zekâ entegrasyonu için 
 **İhtiyacı anlayalım. Çözümü tasarlayalım. Birlikte geliştirelim.**
 
 </div>
+
