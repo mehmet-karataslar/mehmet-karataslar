@@ -4,13 +4,8 @@
 
 ### Bilgisayar Mühendisi · Yazılım Geliştirici
 
-<a href="https://www.benmuhendisiniz.com/projects">
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="banner-dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="banner.svg">
-  <img src="banner.svg" alt="Mehmet Karataş — animasyonlu yazılım atölyesi" width="100%">
-</picture>
-</a>
+<a href="https://www.benmuhendisiniz.com/projects#gh-light-mode-only"><img src="banner.svg#gh-light-mode-only" alt="Mehmet Karataş — açık tema yazılım atölyesi" width="100%"></a>
+<a href="https://www.benmuhendisiniz.com/projects#gh-dark-mode-only"><img src="banner-dark.svg#gh-dark-mode-only" alt="Mehmet Karataş — koyu tema yazılım atölyesi" width="100%"></a>
 
 **Web, mobil ve yapay zekâ ile fikirleri çalışan ürünlere dönüştürüyorum.**
 
