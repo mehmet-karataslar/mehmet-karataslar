@@ -14,7 +14,7 @@
 <a href="https://www.linkedin.com/in/mehmet-karata%C5%9F-830a22212/"><img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"></a>
 <a href="mailto:benmuhendisiniz@gmail.com"><img src="https://img.shields.io/badge/İletişim-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="E-posta ile iletişim"></a>
 
-<sub>**Hızlı gezinti:** [Hakkımda](#hakkimda) · [Hizmetler](#hizmetler) · [Çalışma şeklim](#calisma) · [Teknolojiler](#teknoloji) · [Projeler](#projeler) · [İstatistikler](#istatistik) · [İletişim](#iletisim)</sub>
+<sub>**Hızlı gezinti:** [Hakkımda](#hakkimda) · [Hizmetler](#hizmetler) · [Çalışma şeklim](#calisma) · [Teknolojiler](#teknoloji) · [Projeler](#projeler) · [İletişim](#iletisim)</sub>
 
 <sub>*Computer Engineer building web, mobile and AI-powered products.*</sub>
 
@@ -208,19 +208,6 @@ Türkçe YouTube içeriklerimde yapay zekâ destekli web geliştirmeyi anlatıyo
 
 <a href="KANAL_BAĞLANTISI"><img src="https://img.shields.io/badge/YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white" alt="YouTube kanalım"></a>
 -->
-
----
-
-<a id="istatistik"></a>
-
-## 📈 GitHub commit geçmişim
-
-<a href="https://github.com/mehmet-karataslar?tab=repositories#gh-light-mode-only"><img src="assets/commit-history.svg#gh-light-mode-only" alt="GitHub toplam commit sayım ve son commitlerim — açık tema" width="100%"></a>
-<a href="https://github.com/mehmet-karataslar?tab=repositories#gh-dark-mode-only"><img src="assets/commit-history-dark.svg#gh-dark-mode-only" alt="GitHub toplam commit sayım ve son commitlerim — koyu tema" width="100%"></a>
-
-Bu alan GitHub Actions tarafından 6 saatte bir otomatik güncellenir. Toplam, GitHub commit aramasında hesabıma atfedilen ve erişilebilen kayıtları gösterir. Standart erişimde herkese açık commitler sayılır.
-
-[Commit güncelleme işlemleri](https://github.com/mehmet-karataslar/mehmet-karataslar/actions) · [GitHub depolarım](https://github.com/mehmet-karataslar?tab=repositories)
 
 ---
 
