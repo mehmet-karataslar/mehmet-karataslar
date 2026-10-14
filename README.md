@@ -159,8 +159,8 @@ flowchart TB
 ## 🧰 Teknoloji çantam
 
 <p align="center">
-  <img src="https://skillicons.dev/icons?i=dart,flutter,react,nextjs,ts,js,python,cs,dotnet,c,nodejs,postgres,supabase,firebase,redis,pytorch,tensorflow,git,github&theme=light&perline=10#gh-light-mode-only" alt="Kullandığım teknolojiler — açık tema">
-<img src="https://skillicons.dev/icons?i=dart,flutter,react,nextjs,ts,js,python,cs,dotnet,c,nodejs,postgres,supabase,firebase,redis,pytorch,tensorflow,git,github&theme=dark&perline=10#gh-dark-mode-only" alt="Kullandığım teknolojiler — koyu tema">
+  <a href="https://www.benmuhendisiniz.com/projects#gh-light-mode-only"><img src="https://skillicons.dev/icons?i=dart,flutter,react,nextjs,ts,js,python,cs,dotnet,c,nodejs,postgres,supabase,firebase,redis,pytorch,tensorflow,git,github&theme=light&perline=10#gh-light-mode-only" alt="Kullandığım teknolojiler — açık tema"></a>
+<a href="https://www.benmuhendisiniz.com/projects#gh-dark-mode-only"><img src="https://skillicons.dev/icons?i=dart,flutter,react,nextjs,ts,js,python,cs,dotnet,c,nodejs,postgres,supabase,firebase,redis,pytorch,tensorflow,git,github&theme=dark&perline=10#gh-dark-mode-only" alt="Kullandığım teknolojiler — koyu tema"></a>
 </p>
 
 | Kategori | Teknolojiler |
