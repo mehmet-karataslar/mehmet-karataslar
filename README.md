@@ -4,7 +4,13 @@
 
 ### Bilgisayar Mühendisi · Yazılım Geliştirici
 
-<a href="https://www.benmuhendisiniz.com/projects"><img src="assets/software-studio.svg" alt="Mehmet Karataş’ın animasyonlu yazılım atölyesi: kod ekranı, mobil uygulama, yapay zekâ ağı ve küçük robot" width="100%"></a>
+<a href="https://www.benmuhendisiniz.com/projects">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="banner-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="banner.svg">
+  <img src="banner.svg" alt="Mehmet Karataş — animasyonlu yazılım atölyesi" width="100%">
+</picture>
+</a>
 
 **Web, mobil ve yapay zekâ ile fikirleri çalışan ürünlere dönüştürüyorum.**
 
