@@ -1,9 +1,7 @@
 <div align="center">
 
-<a href="https://www.benmuhendisiniz.com/projects">
-  <img src="github-hero.svg#gh-light-mode-only" alt="Mehmet Karataş — Yazılım Geliştirici — açık tema" width="100%">
-<img src="github-hero-dark.svg#gh-dark-mode-only" alt="Mehmet Karataş — Yazılım Geliştirici — koyu tema" width="100%">
-</a>
+<a href="https://www.benmuhendisiniz.com/projects#gh-light-mode-only"><img src="github-hero.svg#gh-light-mode-only" alt="Mehmet Karataş — Yazılım Geliştirici — açık tema" width="100%"></a>
+<a href="https://www.benmuhendisiniz.com/projects#gh-dark-mode-only"><img src="github-hero-dark.svg#gh-dark-mode-only" alt="Mehmet Karataş — Yazılım Geliştirici — koyu tema" width="100%"></a>
 
 # Mehmet Karataş
 
