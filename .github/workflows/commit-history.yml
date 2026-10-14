@@ -60,41 +60,6 @@ jobs:
           def esc(s):
               return html.escape(str(s), quote=True)
           
-          def render(dark=False):
-              bg, ink, muted, card, border = ('#0d1117', '#f0e8df', '#a99786', '#161b22', '#30363d') if dark else ('#fffaf4', '#503c2d', '#99826b', '#ffffff', '#eadac8')
-              out = [f'<svg xmlns="http://www.w3.org/2000/svg" width="960" height="570" viewBox="0 0 960 570"><title>{esc(login)} — GitHub commit geçmişi</title><rect width="960" height="570" rx="18" fill="{bg}"/><g font-family="Arial,Helvetica,sans-serif">']
-              def text(x,y,s,size=12,color=None,weight='normal'):
-                  out.append(f'<text x="{x}" y="{y}" fill="{color or ink}" font-size="{size}" font-weight="{weight}">{esc(s)}</text>')
-              text(28,35,'GITHUB COMMIT GEÇMİŞİ',14,muted,'bold')
-              text(28,83,f'{total:,}'.replace(',', '.'),38,ink,'bold')
-              text(210,63,'Toplam commit',19,ink,'bold')
-              text(210,85,scope,12,muted)
-              text(28,116,'Son 12 ay — aylık commit sayısı',13,ink,'bold')
-              maximum = max(1, max(n for _,n in months))
-              for i,(label,count) in enumerate(months):
-                  x = 42+i*74
-                  height = round(count/maximum*95)
-                  out.append(f'<rect x="{x}" y="{239-height}" width="40" height="{max(2,height)}" rx="4" fill="#e98a5f"><title>{label}: {count} commit</title></rect>')
-                  text(x,257,label,10,muted)
-                  text(x,230-height,str(count),10,muted)
-              text(28,293,'Son herkese açık commitler',14,ink,'bold')
-              for i,c in enumerate(recent):
-                  y = 312+i*33
-                  out.append(f'<rect x="24" y="{y-15}" width="912" height="30" rx="6" fill="{card}" stroke="{border}"/>')
-                  date = c['commit']['committer']['date'][:10]
-                  repo = c['repository']['name']
-                  message = c['commit']['message'].splitlines()[0]
-                  text(34,y+4,date,10,muted)
-                  text(114,y+4,repo[:20],11,ink,'bold')
-                  text(270,y+4,message[:80] + ('…' if len(message)>80 else ''),11,ink)
-              text(28,535,'GitHub commit aramasındaki erişilebilir kayıtlar · 6 saatte bir otomatik güncelleme',11,muted)
-              text(28,554,'Son güncelleme: ' + now.strftime('%d.%m.%Y %H:%M') + ' (Türkiye)',11,muted)
-              out.append('</g></svg>')
-              return ''.join(out)
-          
-          Path('assets').mkdir(exist_ok=True)
-          Path('assets/commit-history.svg').write_text(render(), encoding='utf-8')
-          Path('assets/commit-history-dark.svg').write_text(render(True), encoding='utf-8')
           import re
           for filename, dark in [('github-hero.svg', False), ('github-hero-dark.svg', True)]:
               path = Path(filename)
@@ -103,7 +68,7 @@ jobs:
               content = path.read_text(encoding='utf-8')
               ink = '#f0e8df' if dark else '#503c2d'
               muted = '#a99786' if dark else '#99826b'
-              parts = ['<g id="actual-commit-summary">', f'<text x="619" y="54" font-size="11" font-weight="bold" fill="{muted}">TOPLAM COMMIT</text>', f'<text x="619" y="97" font-size="35" font-weight="bold" fill="{ink}">{total:,}</text>', f'<text x="765" y="82" font-size="11" fill="{muted}">{esc(scope)}</text>', f'<text x="765" y="100" font-size="10" fill="{muted}">6 saatte bir otomatik güncelleme</text>']
+              parts = ['<g id="actual-commit-summary">', f'<text x="619" y="54" font-size="11" font-weight="bold" fill="{muted}">COMMIT GEÇMİŞİM</text>', f'<text x="619" y="97" font-size="35" font-weight="bold" fill="{ink}">{total:,}</text>', f'<text x="765" y="82" font-size="11" fill="{muted}">{esc(scope)}</text>', f'<text x="765" y="100" font-size="10" fill="{muted}">6 saatte bir otomatik güncelleme</text>']
               maximum = max(1, max(n for _,n in months))
               for i,(label,count) in enumerate(months):
                   x = 621+i*34
@@ -128,7 +93,7 @@ jobs:
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add assets/commit-history.svg assets/commit-history-dark.svg github-hero.svg github-hero-dark.svg
+          git add github-hero.svg github-hero-dark.svg
           if ! git diff --cached --quiet; then
             git commit -m 'Update GitHub commit history'
             git pull --rebase
