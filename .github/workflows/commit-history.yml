@@ -95,13 +95,40 @@ jobs:
           Path('assets').mkdir(exist_ok=True)
           Path('assets/commit-history.svg').write_text(render(), encoding='utf-8')
           Path('assets/commit-history-dark.svg').write_text(render(True), encoding='utf-8')
+          import re
+          for filename, dark in [('github-hero.svg', False), ('github-hero-dark.svg', True)]:
+              path = Path(filename)
+              if not path.exists():
+                  continue
+              content = path.read_text(encoding='utf-8')
+              ink = '#f0e8df' if dark else '#503c2d'
+              muted = '#a99786' if dark else '#99826b'
+              parts = ['<g id="actual-commit-summary">', f'<text x="619" y="54" font-size="11" font-weight="bold" fill="{muted}">TOPLAM COMMIT</text>', f'<text x="619" y="97" font-size="35" font-weight="bold" fill="{ink}">{total:,}</text>', f'<text x="765" y="82" font-size="11" fill="{muted}">{esc(scope)}</text>', f'<text x="765" y="100" font-size="10" fill="{muted}">6 saatte bir otomatik güncelleme</text>']
+              maximum = max(1, max(n for _,n in months))
+              for i,(label,count) in enumerate(months):
+                  x = 621+i*34
+                  height = max(2, round(count/maximum*39))
+                  parts.append(f'<rect x="{x}" y="{155-height}" width="23" height="{height}" rx="3" fill="#e98a5f"><title>{label}: {count} commit</title></rect>')
+              parts.append(f'<text x="619" y="171" font-size="9" fill="{muted}">Son 12 ay · Güncelleme: {now:%d.%m.%Y %H:%M}</text></g>')
+              block = ''.join(parts)
+              if 'id="actual-commit-summary"' in content:
+                  content = re.sub(r'<g id="actual-commit-summary">[\s\S]*?</g>', lambda m: block, content)
+              else:
+                  start = content.find('<text class="m" x="619"')
+                  end = content.find('<g filter=', start)
+                  if start == -1 or end == -1:
+                      raise RuntimeError('Cannot locate banner contribution panel')
+                  content = content[:start] + block + content[end:]
+              content = content.replace('Canlı katkı haritası', 'Gerçek commit geçmişi').replace('git log --graph --oneline', 'git akışı — şematik animasyon')
+              content = re.sub(r'<metadata>[\s\S]*?</metadata>', '', content)
+              path.write_text(content, encoding='utf-8')
           print('Commit history updated:', total, 'commits')
           PYTHON
       - name: Save updated history
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add assets/commit-history.svg assets/commit-history-dark.svg
+          git add assets/commit-history.svg assets/commit-history-dark.svg github-hero.svg github-hero-dark.svg
           if ! git diff --cached --quiet; then
             git commit -m 'Update GitHub commit history'
             git pull --rebase
