@@ -1,74 +1,65 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="960" height="430" viewBox="0 0 960 430" role="img" aria-labelledby="title desc">
-<title id="title">Mehmet Karataş — Yazılım Atölyesi</title>
-<desc id="desc">Kod ekranı, mobil uygulama ve yapay zekâ arasında hareket eden veri; dokuz saniyede tekrarlanan fikirden ürüne animasyonu. Dekoratif bir sahnedir, canlı sistem durumu göstermez.</desc>
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="500" viewBox="0 0 1080 500" role="img" aria-labelledby="title desc">
+<title id="title">Mehmet Karataş — Fikirden ürüne, canlı yazılım atölyesi</title><desc id="desc">Sıcak renkli animasyon: gerçekçi terminal, telefon içinde örnek Pusula mobil uygulaması ve hareketli yapay zekâ işlem ağı. Görsel tanıtım sahnesidir.</desc>
 <defs>
-<linearGradient id="bg" x2="1" y2="1"><stop stop-color="#102744"/><stop offset="1" stop-color="#172f4c"/></linearGradient>
-<pattern id="grid" width="24" height="24" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r="1" fill="#476382" opacity=".3"/></pattern>
-<clipPath id="round"><rect width="960" height="430" rx="24"/></clipPath>
+<linearGradient id="paper" x2="1" y2="1"><stop stop-color="#fff9ec"/><stop offset="1" stop-color="#fff0e9"/></linearGradient>
+<linearGradient id="coral" x2="1" y2="1"><stop stop-color="#fb8549"/><stop offset="1" stop-color="#e95555"/></linearGradient>
+<linearGradient id="frame" x2="1" y2="0"><stop stop-color="#77716c"/><stop offset=".25" stop-color="#292828"/><stop offset=".8" stop-color="#151515"/><stop offset="1" stop-color="#8b837a"/></linearGradient>
+<radialGradient id="core"><stop stop-color="#ffe7a4"/><stop offset=".5" stop-color="#ffba48"/><stop offset="1" stop-color="#ec6b42"/></radialGradient>
+<filter id="shadow" x="-20%" y="-20%" width="140%" height="150%"><feDropShadow dx="0" dy="7" stdDeviation="9" flood-color="#9f6a46" flood-opacity=".15"/></filter>
+<clipPath id="canvas"><rect width="1080" height="500" rx="26"/></clipPath><clipPath id="phone"><rect x="514" y="126" width="158" height="290" rx="23"/></clipPath><clipPath id="term"><rect x="43" y="202" width="365" height="193"/></clipPath><clipPath id="brain"><rect x="754" y="195" width="272" height="174" rx="14"/></clipPath>
 <style>
-text{font-family:Arial,Helvetica,sans-serif}.mono{font-family:Consolas,monospace}.label{font-size:12px;letter-spacing:1.5px;fill:#a8bfd8}.white{fill:#f4f8ff}.muted{fill:#8ba9c7}
-@keyframes code{0%,8%{opacity:.2}18%,82%{opacity:1}100%{opacity:.2}}
-@keyframes dash{to{stroke-dashoffset:-48}}
-@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
-@keyframes blink{0%,44%,56%,100%{opacity:1}50%{opacity:.1}}
-@keyframes bar{0%,10%{transform:scaleX(.12)}68%,92%{transform:scaleX(1)}100%{transform:scaleX(.12)}}
-@keyframes pulse{0%,100%{opacity:.3}50%{opacity:1}}
-@keyframes wheel{to{transform:rotate(360deg)}}
-@keyframes shine{0%,100%{opacity:.25}50%{opacity:1}}
-.line{animation:code 9s infinite}.flow{stroke-dasharray:5 7;animation:dash 3s linear infinite}.bot{animation:float 4s ease-in-out infinite}.eyes{animation:blink 5s infinite}.progress{transform-origin:48px 388px;animation:bar 9s ease-in-out infinite}.node{animation:pulse 3s ease-in-out infinite}.orbit{transform-origin:760px 241px;animation:wheel 20s linear infinite}
-@media(prefers-reduced-motion:reduce){*{animation:none!important}animate,animateMotion{display:none}}
-</style>
-</defs>
-<g clip-path="url(#round)">
-<rect width="960" height="430" fill="url(#bg)"/><rect width="960" height="430" fill="url(#grid)"/>
-<circle cx="920" cy="-30" r="190" fill="#284e75" opacity=".2"/>
-<text x="36" y="37" class="label">MEHMET KARATAŞ / YAZILIM ATÖLYESİ</text>
-<text x="36" y="77" font-size="29" font-weight="700" class="white">Bir fikir. Birkaç satır kod. Yeni bir ürün.</text>
-<text x="36" y="103" font-size="14" fill="#adc3da">Web · Mobil · Yapay zekâ — aynı atölyede, birlikte çalışıyor.</text>
-<rect x="806" y="25" width="117" height="26" rx="13" fill="#23445e"/>
-<circle cx="822" cy="38" r="4" fill="#8dd6bc" class="node"/><text x="835" y="42" font-size="10" fill="#c1e9db">FİKİRDEN ÜRÜNE</text>
-<!-- Code editor -->
-<rect x="36" y="135" width="350" height="210" rx="13" fill="#0b1c30" stroke="#395674"/>
-<path d="M49 135H373Q386 135 386 148V169H36V148Q36 135 49 135" fill="#213c58"/>
-<circle cx="53" cy="152" r="4" fill="#d78880"/><circle cx="68" cy="152" r="4" fill="#d9bd7d"/><circle cx="83" cy="152" r="4" fill="#81bda9"/>
-<text x="103" y="156" font-size="11" fill="#c3d4e6" class="mono">mehmet / yeni-fikir.tsx</text>
-<text x="55" y="198" class="mono muted" font-size="13">01</text><text x="85" y="198" class="mono" font-size="13" fill="#92b8e9">const fikir = 'Bir ihtiyacı çöz';</text>
-<g class="line" style="animation-delay:.6s"><text x="55" y="224" class="mono muted" font-size="13">02</text><text x="85" y="224" class="mono" font-size="13" fill="#c0d1e4">tasarla({ deneyim: 'anlaşılır' });</text></g>
-<g class="line" style="animation-delay:1.2s"><text x="55" y="250" class="mono muted" font-size="13">03</text><text x="85" y="250" class="mono" font-size="13" fill="#a4d8c3">geliştir(['web', 'mobil', 'AI']);</text></g>
-<g class="line" style="animation-delay:1.8s"><text x="55" y="276" class="mono muted" font-size="13">04</text><text x="85" y="276" class="mono" font-size="13" fill="#dbca9a">testEt(); iyileştir(); yayınla();</text></g>
-<rect x="54" y="302" width="315" height="27" rx="6" fill="#17342f"/><text x="66" y="320" font-size="11" fill="#a3dac3" class="mono">✓ Bir fikir daha hayat buluyor...</text>
-<rect x="333" y="265" width="7" height="15" fill="#d5e6f7" class="eyes"/>
-<!-- Connections -->
-<path d="M388 242H453" fill="none" stroke="#7aa7d8" stroke-width="2" class="flow"/>
-<circle r="4" fill="#d9e9ff"><animateMotion path="M389 242H451" dur="2s" repeatCount="indefinite"/></circle>
-<path d="M600 242H653" fill="none" stroke="#85baa9" stroke-width="2" class="flow"/>
-<circle r="4" fill="#b7e0d0"><animateMotion path="M600 242H651" dur="2s" begin="1s" repeatCount="indefinite"/></circle>
-<text x="403" y="226" font-size="9" fill="#a9c1dc">BUILD</text><text x="611" y="226" font-size="9" fill="#a9c1dc">SYNC</text>
-<!-- Phone preview -->
-<rect x="457" y="128" width="142" height="227" rx="23" fill="#dce7f4"/>
-<rect x="464" y="135" width="128" height="213" rx="18" fill="#f8fbff"/>
-<rect x="503" y="141" width="50" height="7" rx="3.5" fill="#a2b5ca"/>
-<rect x="475" y="164" width="107" height="40" rx="9" fill="#1f4b7b"/>
-<text x="486" y="181" font-size="9" fill="#bed3eb">YENİ BİR GÜN</text><text x="486" y="196" font-size="12" font-weight="bold" fill="white">Merhaba Mehmet!</text>
-<rect x="475" y="215" width="50" height="44" rx="7" fill="#e4edf9"/><rect x="532" y="215" width="50" height="44" rx="7" fill="#e1f0ea"/>
-<path d="M489 239L498 229L508 239M493 237V246H504V237" stroke="#54799e" stroke-width="2" fill="none"/>
-<path d="M544 236L551 243L570 226" stroke="#527d69" stroke-width="2" fill="none"><animate attributeName="opacity" values=".2;1;1;.2" keyTimes="0;.4;.85;1" dur="9s" repeatCount="indefinite"/></path>
-<rect x="475" y="271" width="107" height="37" rx="7" fill="#e7edf5"/>
-<rect x="484" y="280" width="65" height="4" rx="2" fill="#a1b7d0"/><rect x="484" y="291" width="88" height="4" rx="2" fill="#c3d2e4"/>
-<rect x="475" y="318" width="107" height="17" rx="6" fill="#2c5683"/><text x="499" y="330" font-size="8" fill="white">FİKRİ KEŞFET</text>
-<!-- AI panel -->
-<rect x="657" y="135" width="266" height="210" rx="13" fill="#162c43" stroke="#395674"/>
-<text x="676" y="160" class="label">AKILLI ÇÖZÜMLER</text>
-<g stroke="#6b96b8" stroke-width="1.4" opacity=".65"><path d="M713 205L760 184L811 205L828 245L796 284L746 293L704 259Z M713 205L796 284 M760 184L746 293 M811 205L704 259 M828 245L713 205 M746 293L811 205" fill="none"/></g>
-<g fill="#a9cced"><circle cx="713" cy="205" r="5" class="node"/><circle cx="760" cy="184" r="6" class="node" style="animation-delay:.4s"/><circle cx="811" cy="205" r="5" class="node" style="animation-delay:.8s"/><circle cx="828" cy="245" r="5" class="node" style="animation-delay:1.2s"/><circle cx="796" cy="284" r="5" class="node" style="animation-delay:1.6s"/><circle cx="746" cy="293" r="5" class="node" style="animation-delay:2s"/><circle cx="704" cy="259" r="5" class="node" style="animation-delay:2.4s"/></g>
-<g class="orbit"><ellipse cx="760" cy="241" rx="24" ry="54" stroke="#adc9e4" stroke-width="1" fill="none" opacity=".4"/><circle cx="760" cy="187" r="3" fill="#c2ddf5"/></g>
-<circle cx="760" cy="241" r="23" fill="#2b5278"/><text x="760" y="246" text-anchor="middle" font-size="14" fill="#e5efff" font-weight="bold">AI</text>
-<!-- playful robot -->
-<g class="bot"><path d="M866 220V212" stroke="#98b8d5" stroke-width="2"/><circle cx="866" cy="209" r="3" fill="#a4d8c3"/><rect x="847" y="220" width="39" height="30" rx="9" fill="#d4e2f0"/><g class="eyes" fill="#234869"><circle cx="858" cy="232" r="3"/><circle cx="875" cy="232" r="3"/></g><path d="M862 241Q867 245 872 241" stroke="#476a88" stroke-width="1.5" fill="none"/><rect x="854" y="253" width="25" height="17" rx="5" fill="#aec4d9"/><path d="M850 255L844 259M883 255L890 249" stroke="#b9cfdf" stroke-width="3" stroke-linecap="round"/></g>
-<text x="680" y="325" font-size="11" fill="#a9c1d9">Python · Görüntü işleme · Otomasyon</text>
-<!-- Cycle timeline -->
-<rect x="36" y="371" width="887" height="38" rx="10" fill="#0c2036"/>
-<rect x="48" y="386" width="155" height="4" rx="2" fill="#294762"/><rect x="48" y="386" width="155" height="4" rx="2" fill="#9bbce2" class="progress"/>
-<text x="226" y="395" font-size="12" fill="#c8d8e9">01 Fikir</text><text x="345" y="395" font-size="12" fill="#c8d8e9">02 Tasarım</text><text x="490" y="395" font-size="12" fill="#c8d8e9">03 Kod</text><text x="608" y="395" font-size="12" fill="#c8d8e9">04 Test</text><text x="723" y="395" font-size="12" fill="#a8d9c6">05 Ürün</text><text x="831" y="395" font-size="10" fill="#7898b8">TEKRAR ↻</text>
+text{font-family:Arial,Helvetica,sans-serif}.mono{font-family:Consolas,'Courier New',monospace}.small{font-size:11px}.ink{fill:#423127}.sub{fill:#8d7363}
+@keyframes reveal{0%,6%{opacity:0}18%,88%{opacity:1}100%{opacity:0}}@keyframes blink{0%,45%,100%{opacity:1}50%,90%{opacity:0}}@keyframes dash{to{stroke-dashoffset:-42}}@keyframes pulse{0%,100%{opacity:.45}50%{opacity:1}}@keyframes rotate{to{transform:rotate(360deg)}}@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}@keyframes grow{0%,10%{transform:scaleX(.2)}70%,90%{transform:scaleX(1)}100%{transform:scaleX(.2)}}
+.row{animation:reveal 10s infinite}.cursor{animation:blink 1s step-end infinite}.flow{stroke-dasharray:4 6;animation:dash 2s linear infinite}.signal{animation:pulse 2s ease-in-out infinite}.orbit{transform-origin:890px 279px;animation:rotate 12s linear infinite}.floating{animation:float 3s ease-in-out infinite}.bar{transform-origin:531px 243px;animation:grow 10s ease-in-out infinite}
+@media(prefers-reduced-motion:reduce){*{animation:none!important}animate,animateMotion,animateTransform{display:none}}
+</style></defs>
+<g clip-path="url(#canvas)"><rect width="1080" height="500" fill="url(#paper)"/><circle cx="1070" cy="20" r="170" fill="#ffb990" opacity=".22"/><circle cx="48" cy="485" r="180" fill="#ffd67a" opacity=".16"/>
+<rect x="34" y="28" width="38" height="25" rx="7" fill="#ef7450"/><text x="53" y="46" text-anchor="middle" fill="white" font-size="12" font-weight="bold">MK</text><text x="85" y="45" font-size="12" font-weight="bold" letter-spacing="1.6" fill="#9f684f">MEHMET KARATAŞ / YAZILIM ATÖLYESİ</text>
+<text x="34" y="89" font-size="31" font-weight="700" fill="#412f25">Fikirleri kodluyorum. Hayatı kolaylaştırıyorum.</text><text x="34" y="114" font-size="15" fill="#9b7561">Web, mobil ve yapay zekâ — üretmenin üç farklı yüzü.</text>
+<rect x="915" y="29" width="128" height="25" rx="12" fill="#ffe1c5"/><circle cx="931" cy="41" r="4" fill="#e97043" class="signal"/><text x="943" y="45" font-size="10" fill="#a35230">FİKİRDEN ÜRÜNE</text>
+<!-- desktop terminal -->
+<g filter="url(#shadow)"><rect x="34" y="154" width="386" height="261" rx="13" fill="#232422"/><path d="M47 154H407Q420 154 420 167V187H34V167Q34 154 47 154" fill="#373735"/></g>
+<circle cx="51" cy="170" r="4.5" fill="#ff6b63"/><circle cx="67" cy="170" r="4.5" fill="#ffcb4c"/><circle cx="83" cy="170" r="4.5" fill="#69c88d"/><text x="171" y="175" class="mono" font-size="11" fill="#e8e7dc">mehmet — zsh</text>
+<rect x="44" y="187" width="126" height="23" rx="4" fill="#282a27"/><text x="57" y="202" class="mono" font-size="10" fill="#f2c082">~/projects/pusula</text><text x="188" y="202" class="mono" font-size="10" fill="#969b91">main · flutter</text>
+<g clip-path="url(#term)" class="mono" font-size="12">
+<text x="50" y="231" fill="#76d6a4">mehmet@studio</text><text x="165" y="231" fill="#c4c6bc">~/pusula</text><text x="50" y="251" fill="#ffd16b">❯</text><text x="66" y="251" fill="#f2eee4">flutter run --release</text>
+<g class="row" style="animation-delay:.5s"><text x="50" y="278" fill="#9ba599">Resolving dependencies...</text><text x="50" y="300" fill="#eac483">Building mobile application...</text></g>
+<g class="row" style="animation-delay:1.8s"><text x="50" y="326" fill="#7bdda6">✓ Build completed successfully</text><text x="50" y="348" fill="#7bdda6">✓ Application ready</text></g>
+<g class="row" style="animation-delay:2.8s"><text x="50" y="375" fill="#ffd16b">❯</text><rect x="66" y="363" width="8" height="14" fill="#f3eacb" class="cursor"/></g></g>
+<path d="M34 394H420" stroke="#44473f"/><circle cx="51" cy="404" r="3" fill="#75d29a"/><text x="62" y="408" class="mono" font-size="9" fill="#9cb19d">zsh</text><text x="300" y="408" class="mono" font-size="9" fill="#b7b9b0">UTF-8 · release</text>
+<!-- live data paths -->
+<path d="M422 282H494" fill="none" stroke="#e99a63" stroke-width="2" class="flow"/><text x="439" y="266" font-size="10" font-weight="bold" fill="#c47b47">BUILD</text><circle r="4" fill="#ed8745"><animateMotion path="M426 282H493" dur="2s" repeatCount="indefinite"/></circle>
+<path d="M687 282H731" fill="none" stroke="#5fae8f" stroke-width="2" class="flow"/><circle r="4" fill="#2fab80"><animateMotion path="M689 282H730" dur="2s" begin=".6s" repeatCount="indefinite"/></circle>
+<!-- phone body -->
+<g filter="url(#shadow)"><rect x="503" y="115" width="180" height="312" rx="32" fill="url(#frame)"/><rect x="508" y="120" width="170" height="302" rx="28" fill="#141515"/></g>
+<rect x="500" y="180" width="3" height="25" rx="1.5" fill="#716c66"/><rect x="500" y="214" width="3" height="32" rx="1.5" fill="#716c66"/><rect x="683" y="188" width="3" height="42" rx="1.5" fill="#716c66"/>
+<g clip-path="url(#phone)"><rect x="514" y="126" width="158" height="290" fill="#fcfaf5"/>
+<text x="526" y="144" font-size="9" font-weight="bold" fill="#282927">9:41</text><rect x="568" y="130" width="48" height="13" rx="6.5" fill="#141515"/><circle cx="607" cy="136" r="2" fill="#344048"/>
+<path d="M631 142V139M635 142V136M639 142V133" stroke="#393a36" stroke-width="2"/><rect x="645" y="134" width="16" height="8" rx="2" stroke="#45473f" fill="none"/><rect x="647" y="136" width="10" height="4" rx="1" fill="#439c76"/>
+<text x="526" y="165" font-size="11" font-weight="bold" fill="#db7149">PUSULA</text><circle cx="652" cy="161" r="9" fill="#fae5d3"/><text x="652" y="164" font-size="7" text-anchor="middle" fill="#a36940">MK</text>
+<text x="526" y="188" font-size="15" font-weight="bold" fill="#39372e">Bugünkü plan</text><text x="526" y="202" font-size="8" fill="#9b9589">Küçük adımlar, güçlü sonuçlar.</text>
+<rect x="525" y="214" width="136" height="43" rx="9" fill="url(#coral)"/><text x="533" y="228" font-size="8" fill="#fff2dd">HAFTALIK İLERLEME</text><text x="648" y="228" text-anchor="end" font-size="9" font-weight="bold" fill="white">3 / 5</text><rect x="533" y="240" width="117" height="4" rx="2" fill="#ffb090"/><rect x="533" y="240" width="76" height="4" rx="2" fill="#fff2bd"><animate attributeName="width" values="38;76;76;38" dur="10s" repeatCount="indefinite"/></rect>
+<rect x="525" y="266" width="136" height="40" rx="8" fill="white" stroke="#eee5d9"/><rect x="533" y="275" width="22" height="22" rx="6" fill="#fff0ca"/><text x="544" y="290" font-size="13" text-anchor="middle" fill="#c89330">∑</text><text x="561" y="282" font-size="9" font-weight="bold" fill="#514334">Matematik</text><text x="561" y="295" font-size="7" fill="#94816c">Problemler · 30 soru</text>
+<rect x="525" y="313" width="136" height="40" rx="8" fill="white" stroke="#eee5d9"/><rect x="533" y="322" width="22" height="22" rx="6" fill="#dcf2e5"/><path d="M539 334L544 339L551 329" fill="none" stroke="#38a77a" stroke-width="2"/><text x="561" y="329" font-size="9" font-weight="bold" fill="#514334">Türkçe</text><text x="561" y="342" font-size="7" fill="#94816c">Paragraf · Tamamlandı</text>
+<rect x="525" y="361" width="136" height="20" rx="7" fill="#fff1df"/><text x="593" y="374" text-anchor="middle" font-size="8" fill="#aa7146">Çalışmaya devam et →</text>
+<path d="M514 388H672" stroke="#eee5d9"/><g stroke="#cf7a4e" stroke-width="1.3" fill="none"><path d="M534 400L540 395L546 400V406H536V400"/><rect x="587" y="396" width="12" height="10" rx="2"/><path d="M639 406V400M644 406V396M649 406V402"/></g><rect x="573" y="411" width="40" height="3" rx="1.5" fill="#33332d"/>
 </g>
-</svg>
+<!-- AI intelligence panel -->
+<g filter="url(#shadow)"><rect x="738" y="154" width="307" height="261" rx="16" fill="#fffdf8" stroke="#f2d9b7"/></g><rect x="755" y="171" width="27" height="24" rx="7" fill="#fff0d2"/><path d="M764 183H774M769 178V188" stroke="#d88e29" stroke-width="2"/>
+<text x="791" y="187" font-size="15" font-weight="bold" fill="#714b2d">Yapay zekâ atölyesi</text><text x="756" y="208" font-size="10" fill="#a48967">Veri → bağlantı → çözüm</text>
+<g clip-path="url(#brain)">
+<ellipse cx="890" cy="280" rx="91" ry="66" fill="#fff3d8"/>
+<g stroke="#e9bc76" stroke-width="1.4" fill="none"><path d="M788 244L841 228L890 259L939 231L995 248M788 280L841 267L890 279L939 275L995 282M788 318L841 325L890 298L939 325L995 318M788 244L841 267L890 298L939 275L995 248M788 318L841 267L890 259L939 275L995 318M841 228L841 325M939 231L939 325"/></g>
+<g fill="#e99a3c"><circle cx="788" cy="244" r="5" class="signal"/><circle cx="788" cy="280" r="5" class="signal" style="animation-delay:.4s"/><circle cx="788" cy="318" r="5" class="signal" style="animation-delay:.8s"/></g>
+<g fill="#ef866d"><circle cx="841" cy="228" r="6" class="signal"/><circle cx="841" cy="267" r="6" class="signal" style="animation-delay:.7s"/><circle cx="841" cy="325" r="6" class="signal" style="animation-delay:1.4s"/></g>
+<g fill="#43ac89"><circle cx="939" cy="231" r="6" class="signal"/><circle cx="939" cy="275" r="6" class="signal" style="animation-delay:.7s"/><circle cx="939" cy="325" r="6" class="signal" style="animation-delay:1.4s"/></g>
+<g fill="#e6aa3d"><circle cx="995" cy="248" r="5"/><circle cx="995" cy="282" r="5"/><circle cx="995" cy="318" r="5"/></g>
+<circle cx="890" cy="279" r="37" fill="#ffbb53" opacity=".15"><animate attributeName="r" values="32;48;32" dur="3s" repeatCount="indefinite"/><animate attributeName="opacity" values=".25;.05;.25" dur="3s" repeatCount="indefinite"/></circle>
+<g class="orbit"><ellipse cx="890" cy="279" rx="39" ry="29" fill="none" stroke="#f0aa46" stroke-width="1.2"/><circle cx="929" cy="279" r="3.5" fill="#de7750"/></g><rect x="868" y="257" width="44" height="44" rx="11" fill="url(#core)" stroke="#e9a555"/><text x="890" y="285" text-anchor="middle" font-size="18" font-weight="bold" fill="#744215">AI</text>
+<circle r="3" fill="#ee805b"><animateMotion path="M788 244L841 267L868 279" dur="2.5s" repeatCount="indefinite"/></circle><circle r="3" fill="#41b58a"><animateMotion path="M912 279L939 275L995 282" dur="2.5s" begin="1s" repeatCount="indefinite"/></circle>
+</g>
+<rect x="755" y="365" width="80" height="25" rx="8" fill="#ffedda"/><text x="795" y="381" font-size="10" text-anchor="middle" fill="#b87635">Görüntü</text><rect x="843" y="365" width="84" height="25" rx="8" fill="#fde5dc"/><text x="885" y="381" font-size="10" text-anchor="middle" fill="#bd6954">Analiz</text><rect x="935" y="365" width="93" height="25" rx="8" fill="#e1f2e8"/><text x="981" y="381" font-size="10" text-anchor="middle" fill="#46856b">Otomasyon</text>
+<!-- playful helper -->
+<g class="floating"><rect x="1023" y="118" width="30" height="23" rx="7" fill="#f9bb63" stroke="#e9a144"/><path d="M1038 118V113" stroke="#d08e3b"/><circle cx="1038" cy="111" r="2" fill="#df8061"/><circle cx="1032" cy="129" r="2" fill="#795736"/><circle cx="1044" cy="129" r="2" fill="#795736"/><path d="M1033 135Q1038 139 1043 135" stroke="#795736" fill="none"/></g>
+<rect x="34" y="444" width="1011" height="34" rx="12" fill="#f4e4d4"/><text x="56" y="466" font-size="11" font-weight="bold" fill="#aa704d">BİR FİKRİN YOLCULUĞU</text><text x="326" y="466" font-size="12" fill="#a67b52">Fikir</text><path d="M377 461H420" stroke="#d8b996"/><text x="441" y="466" font-size="12" fill="#b67c51">Tasarım</text><path d="M513 461H557" stroke="#d8b996"/><text x="578" y="466" font-size="12" fill="#d16f49">Kod</text><path d="M620 461H667" stroke="#d8b996"/><text x="687" y="466" font-size="12" fill="#b8834c">Test</text><path d="M733 461H778" stroke="#d8b996"/><text x="800" y="466" font-size="12" font-weight="bold" fill="#509d78">Ürün ✓</text><text x="964" y="466" font-size="10" fill="#a89079">ÖRNEK AKIŞ</text>
+</g></svg>
